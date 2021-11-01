@@ -49,4 +49,16 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+// Actividad por ID
+
+router.get("/:activityId/", async (req, res, next) => {
+  try {
+    const { activityId } = req.params;
+    const activity = await Activity.findByPk(activityId);
+    res.send(activity);
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;

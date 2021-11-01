@@ -2,7 +2,7 @@ const { Router } = require("express");
 const { conn } = require("../db");
 const { Country } = conn.models;
 const { Op } = require("sequelize"); // [Op.iLike]: '%hat',  ---->  // ILIKE '%hat' (case insensitive) (PG only)
-
+                                    // Ejemplo: Si yo tengo varios Rick, yo encuentro todos. Ricky Rey, o Lucas Rick
 const router = Router();
 
 router.get("/", (req, res, next) => {
