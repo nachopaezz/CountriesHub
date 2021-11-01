@@ -1,30 +1,35 @@
-const { DataTypes } = require("sequelize");
-
+const { DataTypes, sequelize } = require("sequelize");
+// Exportamos una funcion que define el modelo
+// Luego le injectamos la conexion a sequelize.
 module.exports = (sequelize) => {
+  // defino el modelo
   sequelize.define(
-    "Activity",
+    "activity",
     {
+      id: {
+        type: DataTypes.UUID,
+        allowNull: false,
+        primaryKey: true,
+        defaultValue: DataTypes.UUIDV4,  // Crea automaticamente un UUIDV4 !
+      },
       name: {
         type: DataTypes.STRING,
+        allowNull: false,
       },
       difficulty: {
-        type: DataTypes.INTEGER,
-        validate: {
-          min: 1,
-          max: 5,
-        },
+        type: DataTypes.ENUM("1", "2", "3", "4", "5"),
+        allowNull: false,
       },
       duration: {
         type: DataTypes.INTEGER,
+        allowNull: false,
       },
       season: {
-        type: DataTypes.ENUM("summer", "fall", "winter", "spring"),
+        type: DataTypes.ENUM("Spring", "Summer", "Fall", "Winter"),
       },
     },
     {
-      timestamps: true,
-      createdAt: false,
-      updatedAt: false,
+      freezeTableName: true,
     }
   );
 };
