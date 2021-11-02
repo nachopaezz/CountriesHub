@@ -4,12 +4,11 @@ import { fetchCountry } from "../actions/index";
 import CountryDetail from "./countryDetail";
 
 export default function Country() {
-  let countries = useSelector((state) => state.countries);
+  let countries = useSelector((state) => state.filteredCountries);
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCountry())
   }, [dispatch])
-  console.log(countries)
   return(
     <div>
       {countries.map((countryDetail) => {

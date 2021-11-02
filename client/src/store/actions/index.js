@@ -1,6 +1,7 @@
 import axios from 'axios'
 export const FETCH_COUNTRY = 'FETCH_COUNTRY'
 export const SEARCH_COUNTRY = 'SEARCH_COUNTRY'
+export const SORT = 'SORT'
 
 
 export function fetchCountry(){
@@ -33,3 +34,10 @@ export function searchCountry(search){
        })
     }
  }
+
+ export function sort(order){
+    return {
+      type: SORT,
+      payload: order
+    }
+  }
