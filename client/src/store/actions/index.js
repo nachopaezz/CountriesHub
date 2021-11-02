@@ -8,8 +8,11 @@ export function fetchCountry(){
       .then((country) => {
           dispatch({           //  Despachamos la acción
               type: FETCH_COUNTRY,
-              payload: country
+              payload: country.data // .data para la info
           })
+      })
+      .catch((error) => {
+          console.log(error)
       })
    }
 }
