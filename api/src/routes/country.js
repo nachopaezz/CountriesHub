@@ -8,7 +8,7 @@ const router = Router();
 router.get("/", (req, res, next) => {
   if (req.query.name) {
     return Country.findAll({
-      attributes: ["flag", "name", "continent"],
+      attributes: ["flag", "name", "continent", "id"],  // FALTABA ID !
       where: {
         name: {
           [Op.iLike]: `%${req.query.name}%`,
@@ -22,7 +22,7 @@ router.get("/", (req, res, next) => {
     });
   } else {
     return Country.findAll({
-      attributes: ["flag", "name", "continent"],
+      attributes: ["flag", "name", "continent", "id"],
     }).then((country) => {
       res.send(country);
     });
@@ -31,14 +31,41 @@ router.get("/", (req, res, next) => {
 
 // Relación País <--> Actividades
 
-router.get("/:countryId/", async (req, res, next) => {
+router.get("/:id/", async (req, res, next) => {
   try {
-    const { countryId } = req.params;
-    const country = await Country.findByPk(countryId);
+    const { id } = req.params;
+    const country = await Country.findByPk(id);
     res.send(country);
   } catch (error) {
     next(error);
   }
 });
+
+router.get('/', (req, res, next) =>{
+  if(req.query.name){
+      return Country.findAll({
+          attributes : ['name', 'image', 'continent', 'capital', 'subregion', 'area', 'population'],
+          where:{
+              name: {
+              [Op.iLike]:`%${req.query.name}%`
+              }
+          }
+      })
+      .then(country => {
+          if(country.length === 0){
+              return res.send('Not country found')
+          }
+          res.send(country)
+      })
+  }else{
+      return Country.findAll({
+          attributes :  ['name', 'image', 'continent', 'capital', 'subregion', 'area', 'population']
+      })
+      .then(country => {
+          res.send(country)
+      })
+  }
+});
+
 
 module.exports = router;

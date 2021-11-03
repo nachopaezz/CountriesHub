@@ -26,7 +26,7 @@ server.use((req, res, next) => {
 
 server.use("/api", routes); // ----> /api/*
 
-// Error catching endware.  ---------> Control Centrelizado de Errores
+// Error catching endware.  ---------> CONTROL CENTRALIZADO DE ERRORES!
 server.use((err, req, res, next) => {
   // eslint-disable-line no-unused-vars
   const status = err.status || 500;

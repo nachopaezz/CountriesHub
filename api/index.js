@@ -27,7 +27,7 @@ const { conn, Country } = require('./src/db.js');
 // findOrCreate() Busca el registro que coincida con los criterios especificados. Si no existe, crea uno utilizando los valores iniciales proporcionados.
 
 
-conn.sync({ force: false }).then(async() => {
+conn.sync({ force: true }).then(async() => {
   try{
     let resDb = await Country.findAll()
     if(resDb.length === 0){
