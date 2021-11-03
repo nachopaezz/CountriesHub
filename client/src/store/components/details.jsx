@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 export default function Details({name, flag, continent}){
 
@@ -27,5 +28,6 @@ export default function Details({name, flag, continent}){
              </> :
         <div>Estoy Cargando...</div>     // Sino... "está cargando U.U"
          }
+         <Link to= '/'><button>Return</button></Link>
     </div>
 }
