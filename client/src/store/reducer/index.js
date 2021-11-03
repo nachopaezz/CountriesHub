@@ -1,5 +1,5 @@
 import { FETCH_COUNTRY, SEARCH_COUNTRY, SORT } from "../actions";
-import { ASCENDENTE, DESCENDENTE } from "../constantes/sort";
+import { ASCENDENTE } from "../constantes/sort";
 
 const initialState = {
   countries: [],

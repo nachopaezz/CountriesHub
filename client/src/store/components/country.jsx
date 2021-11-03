@@ -12,7 +12,7 @@ export default function Country() {
   return(
     <div>
       {countries.map((countryDetail) => {
-        return <CountryDetail name={countryDetail.name} flag={countryDetail.flag} continent={countryDetail.continent} />
+        return <CountryDetail id={countryDetail.id} name={countryDetail.name} flag={countryDetail.flag} continent={countryDetail.continent} />
       })}
     </div>)
 }
