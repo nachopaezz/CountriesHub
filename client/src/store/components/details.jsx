@@ -3,7 +3,7 @@ import { useParams } from 'react-router'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-export default function Details({name, flag, continent}){
+export default function Details({name, flag, continent, capital, subregion, area, population}){
 
     const [country, setCountry ] = useState(null)
     let {id} = useParams()    // -----------> Devuelve un objeto de los parámetros para la ruta renderizada.
@@ -22,12 +22,19 @@ export default function Details({name, flag, continent}){
          {
              country ?          // Si está el personaje ----- > Mostrame
              <>
-        <h3>{country.name}</h3>
-        <h5>{country.continent}</h5>
+        <h1>{country.name}</h1>
+        <h2>{country.continent}</h2>
         <img src={country.flag} alt="imagen"/>
-             </> :
+        <>
+        <ul>Continent: {country.continent}</ul>
+        <ul>Capital: {country.capital}</ul>
+        <ul>Subregion: {country.subregion}</ul>
+        <ul>Area: {country.area}</ul>
+        <ul>Population: {country.population}</ul>
+        </>
+        </> :
         <div>Estoy Cargando...</div>     // Sino... "está cargando U.U"
          }
-         <Link to= '/'><button>Return</button></Link>
+         <Link to='/'><button>Return</button></Link>
     </div>
 }

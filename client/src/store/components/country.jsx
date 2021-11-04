@@ -1,18 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchCountry } from "../actions/index";
-import CountryDetail from "./countryDetail";
+import { Link } from "react-router-dom";
 
-export default function Country() {
-  let countries = useSelector((state) => state.filteredCountries);
-  let dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchCountry())
-  }, [dispatch])
-  return(
+export default function Country({ id, name, flag, continent }) {
+  // console.log(id)
+  return (
     <div>
-      {countries.map((countryDetail) => {
-        return <CountryDetail id={countryDetail.id} name={countryDetail.name} flag={countryDetail.flag} continent={countryDetail.continent} />
-      })}
-    </div>)
+      <Link to={`/${id}`}>
+        <h3>{name}</h3>
+        <h5>{continent}</h5>
+        <img src={flag} alt="imagen" />
+      </Link>
+    </div>
+  );
 }
