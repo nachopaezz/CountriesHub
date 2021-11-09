@@ -1,44 +1,39 @@
 const { Router } = require("express");
 const { conn } = require("../db");
-const { Activity } = conn.models;
+const { Activity, Country, countryxactivity } = conn.models;
 
 const router = Router();
-// http://localhost:3001/api/activity/
-
-// {
-//   "id": "166b3bf7-9248-433d-808f-666f53161d31",
-//   "name": "paracaidas",
-//   "difficulty": "5",
-//   "duration": 30,
-//   "season": "Spring",
-//   "createdAt": "2021-10-28T19:36:11.663Z",
-//   "updatedAt": "2021-10-28T19:36:11.663Z"
-// }
 
 router.get("/", async (req, res, next) => {
   try {
-    const newActivity = await Activity.findAll();
+    const newActivity = await Activity.findAll({
+      include: [
+        {
+          model: Country,
+          through: "countryxactivity",
+        },
+      ],
+    });
     res.send(newActivity);
   } catch (error) {
     next(error);
   }
 });
 
-// http://localhost:3001/api/activity/
-
-// {
-//   "name": "paracaidas",
-//   "difficulty": "5",
-//   "duration": "30",
-//   "season": "Spring"
-// }
-
 router.post("/", async (req, res, next) => {
   try {
-    const { name, difficulty, duration, season, countryId } = req.body;
+    const {
+      name,
+      physicalDifficulty,
+      technicalDifficulty,
+      duration,
+      season,
+      countryId,
+    } = req.body;
     const newActivity = await Activity.create({
       name,
-      difficulty,
+      physicalDifficulty,
+      technicalDifficulty,
       duration,
       season,
     });
@@ -48,18 +43,5 @@ router.post("/", async (req, res, next) => {
     next(error);
   }
 });
-
-// Actividad por ID
-
-router.get("/:activityId/", async (req, res, next) => {
-  try {
-    const { activityId } = req.params;
-    const activity = await Activity.findByPk(activityId);
-    res.send(activity);
-  } catch (error) {
-    next(error);
-  }
-});
-
 
 module.exports = router;

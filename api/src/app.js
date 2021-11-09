@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
-const routes = require("./routes/index.js"); // <------ importo las rutas de index.js
+const routes = require("./routes/index.js");
 
 require("./db.js");
 
@@ -24,9 +24,9 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use("/api", routes); // ----> /api/*
+server.use("/api", routes);
 
-// Error catching endware.  ---------> CONTROL CENTRALIZADO DE ERRORES!
+// Error catching endware.
 server.use((err, req, res, next) => {
   // eslint-disable-line no-unused-vars
   const status = err.status || 500;

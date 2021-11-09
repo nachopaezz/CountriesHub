@@ -10,13 +10,18 @@ module.exports = (sequelize) => {
         type: DataTypes.UUID,
         allowNull: false,
         primaryKey: true,
-        defaultValue: DataTypes.UUIDV4,  // Crea automaticamente un UUIDV4 !
+        defaultValue: DataTypes.UUIDV4,
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      difficulty: {
+      physicalDifficulty: {
+        type: DataTypes.ENUM("1", "2", "3", "4", "5"),
+        allowNull: false,
+      },
+
+      technicalDifficulty: {
         type: DataTypes.ENUM("1", "2", "3", "4", "5"),
         allowNull: false,
       },

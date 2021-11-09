@@ -6,9 +6,9 @@ const countryRoutes = require("./country");
 
 const router = Router();
 
+router.use("/activity", activityRoutes);
+router.use("/country", countryRoutes);
 // Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);  <----- Enrutado
-router.use("/activity", activityRoutes);  // /api/activity/*
-router.use("/country", countryRoutes);    // /api/country/*
+// Ejemplo: router.use('/auth', authRouter);
 
 module.exports = router;
