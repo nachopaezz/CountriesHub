@@ -1,0 +1,31 @@
+.landing{
+    justify-content: center;
+    font-family: Poppins;
+    font-size: 6em;
+    color: white;
+}
+
+.boton{
+    background-color: tomato;
+    color: white;
+    font-size: 2em;
+    position: absolute;
+    right: 570px;
+    top: 555px;
+    height: 50px;
+    width: 200px;
+    text-decoration: none;
+    font-family: Poppins;
+    border: none;
+    padding-bottom: 50px;
+    border-radius: 10px;
+
+}
+
+.boton:hover{
+    background-color: white;
+    color: tomato;
+    border: solid tomato 2px;
+    transform: translateY(0.5px);
+    cursor: pointer;
+}

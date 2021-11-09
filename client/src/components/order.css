@@ -1,0 +1,40 @@
+select {
+  background-color: tomato;
+  border-radius: 28px;
+  font-family: Poppins;
+  font-size: 0.8em;
+  color: #fafafa;
+  padding: 8px;
+  right: 300px;
+  top: 250px;
+  position: unset;
+  margin: 13px 6px 11px 2px;
+}
+
+select:hover {
+  background: white;
+  font-weight: bold;
+  color: tomato;
+}
+
+option {
+  background-color: white;
+  border-radius: 28px;
+  font-family: Poppins;
+  font-size: 1em;
+  color: tomato;
+  padding: 4px;
+  right: 300px;
+  top: 250px;
+  position: unset;
+}
+
+option:hover {
+  background: rgb(85, 130, 253);
+  font-weight: bold;
+}
+
+h3 {
+  margin: 24px 6px 0px -1px;
+  color: peru;
+}

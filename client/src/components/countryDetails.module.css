@@ -1,0 +1,71 @@
+.card {
+  overflow: hidden;
+  width: 1200px;
+  height: 450px;
+  background: tomato;
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5em;
+  padding: 46px 46px 46px 46px;
+  margin: 27px 0px 24px 24px;
+  opacity: 0.9;
+  border-radius: 40px;
+}
+
+.h1 {
+  font-size: 1.8em;
+  color: white;
+  text-decoration: underline;
+}
+
+.flag {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.h3 {
+  color: white;
+  display: list-item;
+  margin-inline-start: 55px;
+}
+.error {
+  color: white;
+  display: inline-table;
+  text-decoration: underline;
+  margin-block-start: 0.5em;
+  margin-block-end: 0em;
+  margin-inline-start: 31px;
+}
+
+.h4 {
+  color: white;
+  font-size: 20px;
+  display: inline-table;
+  margin-block-start: 0.5em;
+  margin-block-end: 0em;
+  margin-inline-start: 30px;
+}
+
+.button {
+  border-radius: 28px;
+  font-family: Poppins;
+  font-size: 1em;
+  color: tomato;
+  margin-block-start: 1.5em;
+  padding: 4px;
+  background: white;
+  border: none;
+  position: absolute;
+  top: 480px;
+  left: 650px;
+}
+
+button:hover {
+  color: white;
+  background-color: tomato;
+  border: solid white 1px;
+  cursor: pointer;
+}

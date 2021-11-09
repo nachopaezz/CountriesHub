@@ -1,0 +1,52 @@
+.div {
+  font-size: 1em;
+  text-align-last: center;
+  margin: 4px 40px 4px 40px;
+  background-color: white;
+  opacity: 90%;
+  border-radius: 20px;
+}
+
+.img {
+  display: inline;
+}
+
+.h1 {
+  font-size: 2em;
+  color: tomato;
+  font-weight: bold;
+  flex-direction: row;
+
+}
+
+.h3 {
+  margin: 6px 6px 0px -1px;
+  color: tomato;
+  position: absolute;
+  left: 300px;
+}
+
+.select {
+  margin: 4px 0px 15px 10px;
+  font-size: 1em;
+}
+
+.button {
+  background-color: white;
+  border-radius: 28px;
+  font-family: Poppins;
+  font-style: Poppins;
+  font-size: 1.5em;
+  color: tomato;
+  position: unset;
+  margin: 4px;
+  border: solid tomato 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: tomato;
+  font-weight: bold;
+  color: white;
+  border: solid white;
+}

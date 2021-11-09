@@ -1,0 +1,48 @@
+.buttonAll {
+  background-color: tomato;
+  border-radius: 28px;
+  font-family: Poppins;
+  font-size: 1em;
+  color: white;
+  padding: 8px;
+  position: absolute;
+  left: 300px;
+  top: 150px;
+  border: none;
+  cursor: pointer;
+}
+
+
+.buttonCreate{
+  background-color: white;
+  color: tomato;
+  border-radius: 28px;
+  font-family: Poppins;
+  font-size: 1em;
+  padding: 8px;
+  position: absolute;
+  left: 950px;
+  top: 150px;
+  text-decoration: none;
+  border: none;
+}
+
+.buttonCreate:hover {
+  background:tomato;
+  color: white;
+  font-weight: bold;
+}
+
+.buttonAll:hover {
+  background: white;
+  color: tomato;
+  font-weight: bold;
+}
+
+.h1 {
+  color: white;
+  font-family: Poppins;
+  font-size: 5em;
+  margin: 10px 0px 22px 0px;
+  text-decoration: underline;
+}

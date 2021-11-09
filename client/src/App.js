@@ -1,28 +1,24 @@
-import { Switch, Route } from "react-router";
 import "./App.css";
-import Home from "./store/components/home";
-import SearchBar from "./store/components/searchBar";
-import Order from "./store/components/order";
-import Details from "./store/components/details";
-import AddActivity from "./store/components/addActivity";
-import LandingPage from "./store/components/landingPage";
+import CountryDetails from "./components/countryDetails";
+import { Route, Switch } from "react-router";
+import AddActivities from "./components/addActivities";
+import LandingPage from "./components/landingPage";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      <SearchBar />
       <Switch>
         <Route path="/add">
-          <AddActivity />
+          <AddActivities />
         </Route>
-        <Route path="/:id">
-          <Details />
+        <Route path="/id/:id">
+          <CountryDetails />
         </Route>
-        <Route exact path="/">
-          <Order />
+        <Route path="/home">
           <Home />
         </Route>
-        <Route exact path="/landing">
+        <Route exact path="/">
           <LandingPage />
         </Route>
       </Switch>

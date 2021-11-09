@@ -1,0 +1,49 @@
+.card {
+  width: 300px;
+  height: 210px;
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  font-size: small;
+  padding: 19px 23px 31px 23px;
+  margin: 13px 6px 11px 2px;
+  background-color: tomato;
+  opacity: 0.9;
+  border-radius: 33px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.card:hover{
+  background-color: #F53614;
+  box-shadow: white 5px;
+}
+
+.img {
+  border-radius: 10px;
+  height: 110px;
+  width: 160px;
+  text-decoration: none;
+}
+
+.h1 {
+  color: white;
+  text-decoration: none;
+  text-align: initial;
+  font-family: Poppins;
+  font-size: x-large;
+  display: inline;
+  font-weight: initial;
+}
+
+.h3 {
+  color: white;
+  text-decoration: none;
+  font-family: Poppins;
+}
+
+.rayita {
+  text-decoration: none;
+}
