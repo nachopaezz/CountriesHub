@@ -11,10 +11,19 @@ import { Link } from "react-router-dom";
 export default function Home() {
   let allCountries = useSelector((state) => state.filterCountries);
   let dispatch = useDispatch();
-  let [currentPage, setCurrentPage] = useState(1); //guardo en un estados local la pag actual
-  let [countriesPerPage] = useState(9); //guardo cuantos personajes quiero por pag
-  let indexOfLastCountry = currentPage * countriesPerPage; // indice del ultimo personaje = a la pag actual en la que me encuetro * la cantidad de paises por pag
-  let indexOfFirstCountry = indexOfLastCountry - countriesPerPage; // indice del primer pais = al indice del ultio personaje - los personajes por pag
+
+  // Guardo en un state local la pag actual
+  let [currentPage, setCurrentPage] = useState(1);
+
+  //Guardo cuantos personajes quiero por pag
+  let [countriesPerPage] = useState(9);
+
+  // Indice del ultimo personaje = a la pag actual en la que me encuetro * la cantidad de paises por pag
+  let indexOfLastCountry = currentPage * countriesPerPage;
+
+  // Indice del primer pais = al indice del ultimo personaje - los personajes por pag
+  let indexOfFirstCountry = indexOfLastCountry - countriesPerPage;
+
   let currentCountries = allCountries.slice(
     indexOfFirstCountry,
     indexOfLastCountry
