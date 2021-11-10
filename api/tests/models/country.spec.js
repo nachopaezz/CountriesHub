@@ -21,7 +21,7 @@ describe('Country model', () => {
   });
 });
 
-// xdescribe('Activity model', () => {
+// describe('Activity model', () => {
 //   before(() => conn.authenticate()
 //     .catch((err) => {
 //       console.error('Unable to connect to the database:', err);

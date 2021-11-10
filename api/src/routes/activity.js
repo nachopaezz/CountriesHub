@@ -15,7 +15,7 @@ router.get("/", async (req, res, next) => {
       ],
     });
     res.send(newActivity);
-  } catch (error) {
+  } catch (error) {    // Agarra los errores sequelize, "next" pasa al siguiente middleware.
     next(error);
   }
 });

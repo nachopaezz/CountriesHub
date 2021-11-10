@@ -24,7 +24,9 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use("/api", routes);
+// CONFIGURACION EXPRESS
+
+server.use("/api", routes);  // En el path "/api" usa las routes creadas.
 
 // Error catching endware.
 server.use((err, req, res, next) => {

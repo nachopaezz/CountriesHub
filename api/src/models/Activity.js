@@ -7,7 +7,7 @@ module.exports = (sequelize) => {
     "activity",
     {
       id: {
-        type: DataTypes.UUID,
+        type: DataTypes.UUID, // UUID --> Almacena un identificador universal único
         allowNull: false,
         primaryKey: true,
         defaultValue: DataTypes.UUIDV4,

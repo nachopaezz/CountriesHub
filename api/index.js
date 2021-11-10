@@ -22,7 +22,7 @@ const server = require("./src/app.js");
 const { conn, Country } = require("./src/db.js");
 // const {Country} = conn.models;
 
-// Syncing all the models at once.
+// Entry point para conectar  la base de datos a express
 
 conn.sync({ force: true }).then(async () => {
   try {

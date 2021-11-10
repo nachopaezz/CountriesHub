@@ -8,7 +8,7 @@ const router = Router();
 router.get("/", (req, res, next) => {
   if (req.query.name) {
     return Country.findAll({
-      attributes: ["flag", "name", "continent", "id", "population"],
+      attributes: ["flag", "name", "continent", "id"],
       where: {
         name: {
           [Op.iLike]: `%${req.query.name}%`,
@@ -23,7 +23,7 @@ router.get("/", (req, res, next) => {
     });
   } else {
     return Country.findAll({
-      attributes: ["flag", "name", "continent", "id", "population"],
+      attributes: ["flag", "name", "continent", "id"],
       include: { model: Activity },
     }).then((country) => {
       res.send(country);

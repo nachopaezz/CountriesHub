@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
   sequelize.define(
     "country",
     {
-      id: {
+      id: {          // 3 caracteres
         type: DataTypes.STRING,
         allowNull: false,
         primaryKey: true,
@@ -38,7 +38,7 @@ module.exports = (sequelize) => {
       },
     },
     {
-      freezeTableName: true,
+      freezeTableName: true,  // Hacer que el nombre de la tabla sea igual al nombre del modelo
     }
   );
 };

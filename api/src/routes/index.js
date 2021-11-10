@@ -6,6 +6,8 @@ const countryRoutes = require("./country");
 
 const router = Router();
 
+// Requerimos archivos con las rutas.
+
 router.use("/activity", activityRoutes);
 router.use("/country", countryRoutes);
 // Configurar los routers
