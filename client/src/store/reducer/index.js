@@ -18,17 +18,20 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+
     case FETCH_COUNTRY:
       return {
         ...state,
         countries: action.payload,
         filterCountries: action.payload,
       };
+
     case SEARCH_COUNTRY:
       return {
         ...state,
         filterCountries: action.payload,
       };
+
     case SORT:
       let orderCountries = [...state.countries];
       orderCountries.sort((a, b) => {
@@ -44,6 +47,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         filterCountries: orderCountries,
       };
+
     case FILTER_COUNTRY_BY_CONTINENT:
       const allCountries = [...state.countries];
       const continentFilter = allCountries.filter(
@@ -53,10 +57,12 @@ export default function reducer(state = initialState, action) {
         ...state,
         filterCountries: continentFilter,
       };
+
     case POST_ACTIVITY:
       return {
         ...state,
       };
+
     case FILTER_COUNTRY_BY_ACTIVITY:
       console.log("entre", action.payload);
       const countriesAll = state.countries;
@@ -70,16 +76,17 @@ export default function reducer(state = initialState, action) {
           }
         }
       });
-
       return {
         ...state,
         filterCountries: activitys,
       };
+
     case FETCH_ACTIVITY:
       return {
         ...state,
         activity: [...state.activity, action.payload],
       };
+
     case FILTER_COUNTRY_BY_POPULATION:
       let orderPopulation = [...state.countries];
       orderPopulation.sort((a, b) => {

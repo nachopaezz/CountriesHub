@@ -7,7 +7,7 @@ export default function SearchBar() {
   const [search, setSearch] = useState("");
   let dispatch = useDispatch();
 
-  function onSubmit(e) {
+  function onSubmit(e) {  // recibe un evento
     e.preventDefault();
     dispatch(searchCountry(search));
     setSearch("");

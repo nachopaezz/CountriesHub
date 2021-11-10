@@ -5,24 +5,25 @@ import { Link } from "react-router-dom";
 import { getActivity, postActivity } from "../store/action";
 import { useHistory } from "react-router";
 
+
+//validar formulario
 function validate(country) {
   let error = {};
   if (!country.countryId) {
-    error.countryId = "AAA";
+    error.countryId = "Select Country";
   } else if (!country.name) {
-    error.name = " select activity";
+    error.name = " Select Activity";
   } else if (!country.duration) {
-    error.duration = "select duration";
+    error.duration = "Select Duration";
   } else if (!country.season) {
-    error.season = "select season";
+    error.season = "Select Season";
   } else if (!country.physicalDifficulty) {
-    error.season = "select Physical Difficulty";
+    error.season = "Select Physical Difficulty";
   } else if (!country.technicalDifficulty) {
-    error.season = "select Technical Difficulty";
+    error.season = "Select Technical Difficulty";
   }
   return error;
 }
-
 
 export default function AddActivities() {
   let dispatch = useDispatch();
@@ -63,7 +64,7 @@ export default function AddActivities() {
   function onSubmit(e) {
     e.preventDefault();
     dispatch(postActivity(country));
-    alert("Your activity was successfully created");
+    alert("Created!");
     setCountry({
       countryId: "",
       name: "",
@@ -79,6 +80,8 @@ export default function AddActivities() {
     dispatch(getActivity());
   }, [dispatch]);
 
+
+  // Retornamos div para completar la actividad + info
   return (
     <div className={style.div}>
       <h1 className={style.h1}>Create Activity</h1>
@@ -101,7 +104,7 @@ export default function AddActivities() {
             })}
             {error.countryId && <p>{error.countryId} </p>}
           </select>
-          <h4>{country.countryId.map((el) => el + " ,")}</h4>
+          <h4>{country.countryId.map((el) => el + " + ")}</h4>
         </div>
 
         <div>

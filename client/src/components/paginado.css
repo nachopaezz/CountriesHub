@@ -1,28 +1,25 @@
 .paginacion {
-  margin: 20px ;
+  margin: 0px ;
   cursor: pointer;
-}
-
-.paginacion ul {
-  list-style: none;
-  text-align: center;
 }
 
 .paginacion ul li {
   display: inline-block;
-  margin-right: 10px;
-}
-
-.paginacion ul li a {
-  padding: 5px 10px;
-  color: #F53614;
-  background-color: white;
-  text-decoration: none;
-  border-radius: 28px;
+  margin: 5px;
 }
 
 .paginacion ul li a:hover {
   background: #F53614;
   color: white;
   font-weight: bold;
+}
+
+.button{
+  color: tomato;
+  font-size: 1em;
+  background-color: white;
+  border: solid tomato 1px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 8px
 }

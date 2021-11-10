@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchActivity, fetchCountry } from "../store/action";
+import { fetchActivity, fetchCountry } from "../store/action"; // mis actions
 import Country from "./country";
 import Paginado from "./paginado";
 import SearchBar from "./searchBar";
