@@ -7,6 +7,8 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter } from "react-router-dom";
 
+// Prueba desktop 2
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
