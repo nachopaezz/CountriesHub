@@ -11,7 +11,7 @@ function validate(country) {
   let error = {};
   if (!country.countryId) {
     error.countryId = "Select Country";
-  } else if (!country.name) {
+  } else if (!country.activity) {
     error.name = " Select Activity";
   } else if (!country.duration) {
     error.duration = "Select Duration";

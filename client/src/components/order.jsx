@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { ASCENDING, DESCENDING, HIGHEST, LOWER } from "../const/sort";
-import {filterCountryByActivity,filterCountryByCountinent,filterCountryByPopulation,sort,} from "../store/action";
+import {filterCountryByActivity,filterCountryByCountinent,filterCountryByPopulation,sort} from "../store/action";
 import "./order.css";
 
 // Componente Order

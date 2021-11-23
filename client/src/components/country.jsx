@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import style from "./country.module.css";
 
-// Detalle de la card por País
+// Detalle de la card por Paíssss
 export default function Country({ id, name, flag, continent }) {
   return (
     <div className={style.card}>

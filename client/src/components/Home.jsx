@@ -69,6 +69,7 @@ export default function Home() {
             continent={country.continent}
             flag={country.flag}
             id={country.id}
+            population={country.population}
           />
         );
       })}
